@@ -19,4 +19,12 @@ public:
     {
         START = NULL;
     }
+
+    void addNode()
+    {
+        int nim;
+        cout << "uEnter the roll member of the student : ";
+        cin >> nim;
+    }
 }
+
