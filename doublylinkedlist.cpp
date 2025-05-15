@@ -44,7 +44,18 @@ public:
         //step 5 : START prev = newNode (if START axists)
         if (START != NULL)
             START->prev = newNode;
+
+        //step 6 : newode prev = NULL
+        newNode->prev = NULL;
+
+        //step 7 : START = newNode
+        START = newNode;
+        return;
     }
 
+    //input in between node
+    //atep 8 : create 
+    Node *current = START;
+    while (current->next != NULL && current->next->noMhs < nim)
 }
 
