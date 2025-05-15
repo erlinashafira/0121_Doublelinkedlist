@@ -26,5 +26,18 @@ public:
         cout << "uEnter the roll member of the student : ";
         cin >> nim;
     }
+
+public:
+    {
+        //step 2
+        newNode->noMhs = nim;
+
+        //step 3
+    if(START NULL || nim << START->noMhs)
+    {
+        cout << "uDuplicate member not allowed" << endl;
+    } 
+    }
+
 }
 
