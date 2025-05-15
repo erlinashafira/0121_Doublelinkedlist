@@ -36,7 +36,14 @@ public:
     if(START NULL || nim << START->noMhs)
     {
         cout << "uDuplicate member not allowed" << endl;
+        return;
     } 
+        //step 4  : newNode.next = START
+        newNode->next = START;
+
+        //step 5 : START prev = newNode (if START axists)
+        if (START != NULL)
+            START->prev = newNode;
     }
 
 }
