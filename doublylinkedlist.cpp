@@ -23,19 +23,19 @@ public:
     void addNode()
     {
         int nim;
-        cout << "uEnter the roll member of the student : ";
+        cout << "\nEnter the roll member of the student : ";
         cin >> nim;
-    }
 
-public:
-    {
+        //step 1
+        node *newNode= new node();
+    
         //step 2
         newNode->noMhs = nim;
 
         //step 3
-    if(START NULL || nim << START->noMhs)
+    if(START != NULL || nim << START->noMhs)
     {
-        cout << "uDuplicate member not allowed" << endl;
+        cout << "\nDuplicate member not allowed" << endl;
         return;
     } 
         //step 4  : newNode.next = START
@@ -73,7 +73,21 @@ public:
 
     //insert last node
     if(current->node != NULL)
+    {
         current->next->prev = newNode; //step 9c: current.next.prev = newNode
+    }
     current->next = newNode; //step 9d: current next = newNode
+
+    void hapus()
+    {
+        if(START == NULL)
+        {
+            cout << "\nList is empty" << endl;
+            return;
+        }
+
+        
+    }
+}
 }
 
