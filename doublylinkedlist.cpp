@@ -2,18 +2,20 @@
 #include <string>
 using namespace std;
 
-class node
+class Node
 {
 public:
     int noMhs;
-    node *next;
-    node *prev;   
+    Node *next;
+    Node *prev;   
+
 };
 
 class DoubleLinkedList
 {
 private:
-    node *START;
+    Node *START;
+
 public:
     DoubleLinkedList()
     {
@@ -23,23 +25,23 @@ public:
     void addNode()
     {
         int nim;
-        cout << "\nEnter the roll member of the student : ";
-        cin >> nim;
+        cout<< "\nEnter the roll member of the student : ";
+        cin>> nim;
 
-        //step 1
-        node *newNode= new node();
+        //step 1 = allocate memory for new node
+        Node *newNode= new Node();
     
-        //step 2
+        //step 2 = assign value to the data fields
         newNode->noMhs = nim;
 
         //step 3
     if(START == NULL || nim <= START->noMhs)
     {
         if(START != NULL && nim == START->noMhs)
-
+        {
         cout << "\nDuplicate member not allowed" << endl;
         return;
-    } 
+
         //step 4  : newNode.next = START
         newNode->next = START;
 
@@ -53,36 +55,39 @@ public:
         //step 7 : START = newNode
         START = newNode;
         return;
-    }
+        }
+    
 
-    //input in between node
-    //atep 8 : create 
-    Node *current = START;
-    while (current->next != NULL && current->next->noMhs < nim)
-    {
-        current = current->next;
-    }
 
-    if (current->next != NULL && nim == current->next->noMhs)
-    {
-        cout << "\nDuplicate roll numbers not allowed" << endl;
-        return;
-    }
+        //insert in between node
+        //atep 8 : locate positionfor insertion
+        Node *current = START;
+        while (current->next != NULL && current->next->noMhs < nim)
+        {
+            current = current->next;
+        }
 
-    //step 9 :  Insert between current and urrent->next
-    newNode->next = current ->next; //step 9a: newNode.next = current
-    newNode->prev = current; //step 9b: newNode.prev = current
+        if (current->next != NULL && nim == current->next->noMhs)
+        {
+            cout << "\nDuplicate roll numbers not allowed" << endl;
+            return;
+        }
 
-    //insert last node
-    if(current->node != NULL)
-    {
+        //step 9 :  Insert between current and urrent->next
+        newNode->next = current->next; //step 9a: newNode.next = current
+        newNode->prev = current; //step 9b: newNode.prev = current
+
+        //insert last node
+        if(current->next != NULL)
         current->next->prev = newNode; //step 9c: current.next.prev = newNode
+        current->next = newNode; //step 9d: current next = newNode
     }
-    current->next = newNode; //step 9d: current next = newNode
+}
+
 
     void hapus()
     {
-        if(START == NULL)
+        if(START ==NULL)
         {
             cout << "\nList is empty" << endl;
             return;
@@ -115,7 +120,20 @@ public:
                 START->prev = NULL; //step 2b: START.prev = NULL
             }
         }
+    else
+    { 
+        //step 3: link previous node to next of current
+        current->prev->next = current->next;
+
+        //step 4: if current is not the last node
+        if (current->next != NULL)
+        current->next->prev
+
+        //step 5: delete the node
+        delete current;
+        cout << "Record with roll member" << rollNo << "deleted" <<endl;
+
     }
 }
-}
+};
 
