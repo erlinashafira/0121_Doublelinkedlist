@@ -5,7 +5,13 @@ using namespace std;
 class node
 {
 public:
-    int 
+    int noMhs;
     node *next;
-    bode *prev;   
+    node *prev;   
 };
+
+class DoubleLinkedList
+{
+private:
+    node *START;
+}
